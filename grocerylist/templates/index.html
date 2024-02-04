@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+<html>
+<body>
+
+<h1>Grocery List</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Category</td>
+      <td>Name</td>
+      <td>Price</td>
+      <td>Rating</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in mygrocerylist %}
+    <tr>
+      <td>{{ x.type }}</td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.price }}</td>
+      <td>{{ x.rating }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
+-->
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+
+<div class="container">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/grocerylist">Shopping</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/members">Recipes</a>
+    </li>
+  </ul>
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+
+  {% block content %}
+  {% endblock %}
+  
+</div>
+<h1>Grocery List</h1>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <td>Category</td>
+      <td>Name</td>
+      <td>Price</td>
+      <td>Rating</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in mygrocerylist %}
+    <tr>
+      <td>{{ x.type }}</td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.price }}</td>
+      <td>{{ x.rating }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
